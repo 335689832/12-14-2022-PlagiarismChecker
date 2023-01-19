@@ -44,19 +44,20 @@ public class SentenceComparison {
     return costs[s2.length()];
   }
 
-  public static double compare(ArrayList<String> arr1, ArrayList<String> arr2){
+  public static double compare(ArrayList<String> arr1, ArrayList<String> arr2, int[] num){
     double percentage = 0;
     int l1 = arr1.size();
     int l2 = arr2.size();
-    int snum = 0;
+    int counter = 0;
 
-    for(int i = 0; i < l1; i+=2){
-      for(int j = 0; j < l2; j+=2){
-        snum +=similarity(arr1.get(i), arr2.get(j));
+    for(int i = 0; i < l1; i++){
+      for(int j = 0; j < l2; j++){
+        percentage +=similarity(arr1.get(num[i]), arr2.get(num[j]));
+        System.out.println(arr1.get(num[i]) + " + " + arr2.get(num[j]));
+        counter++;
       }
     }
-
-    return percentage;
+    return (percentage/counter);
   }
 
 }
