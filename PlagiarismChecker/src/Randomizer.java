@@ -21,9 +21,6 @@ public class Randomizer {
             for(int i = 0; i < num; i++){
                 temp = rand.nextInt(l1);
                 for(int j = 0; j< num; j++){
-                    if((randomArr[j] == temp)){
-                        System.out.println("Match");
-                    }
                     if(!(randomArr[j] == temp)){
                         randomArr[i] = temp;
                         break;
