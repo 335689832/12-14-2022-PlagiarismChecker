@@ -2,18 +2,19 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 
-
-// This method is used for the comparisons. It will write all the plagiarized sentences into a new file
+/*
+ * Write all the plagiarized essay into a txt file
+ * @param theList
+ * @param fileName
+ */
 public class WriteInNewFile {
-    public static void writeArrayListToFile(ArrayList<String> list, String fileName) {
+    public static void writeArrayListToFile(ArrayList<String> theList, String fileName) {
         try {
-            FileWriter writer = new FileWriter(fileName);
-
-            for (String s : list) {
-                writer.write(s + "\n");
+            FileWriter writing = new FileWriter(fileName);
+            for (String s : theList) {
+                writing.write(s + "\n");
             }
-
-            writer.close();
+            writing.close();
         } catch (IOException e) {
             e.printStackTrace();
         }
