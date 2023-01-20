@@ -3,7 +3,6 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextArea?>
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
@@ -14,10 +13,8 @@
             <Font size="32.0" />
          </font>
       </Label>
-      <Button fx:id="FileEnter" layoutX="359.0" layoutY="422.0" mnemonicParsing="false" onAction="#NextPage2" prefHeight="100.0" prefWidth="199.0" text="generate results" />
-      <TextField fx:id="CHeckFile" layoutX="243.0" layoutY="339.0" prefHeight="46.0" prefWidth="316.0" />
-      <Label layoutX="101.0" layoutY="339.0" prefHeight="46.0" prefWidth="108.0" text="Enter Checking File " />
-      <Button fx:id="GoingBack" layoutX="109.0" layoutY="422.0" mnemonicParsing="false" onAction="#BackPage1" prefHeight="100.0" prefWidth="199.0" text="Go Back" />
+      <Button fx:id="FileEnter" layoutX="359.0" layoutY="372.0" mnemonicParsing="false" onAction="#NextPage2" prefHeight="100.0" prefWidth="199.0" text="generate results" />
+      <Button fx:id="GoingBack" layoutX="108.0" layoutY="372.0" mnemonicParsing="false" onAction="#BackPage1" prefHeight="100.0" prefWidth="199.0" text="Go Back" />
       <TextArea fx:id="TextArea" layoutX="101.0" layoutY="105.0" prefHeight="216.0" prefWidth="458.0" />
       <Button fx:id="ViewFileList" layoutX="591.0" layoutY="130.0" mnemonicParsing="false" onAction="#btnViewFileList" prefHeight="82.0" prefWidth="146.0" text="View FileList" />
    </children>

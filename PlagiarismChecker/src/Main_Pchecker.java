@@ -8,7 +8,7 @@ import javafx.scene.control.TextField;
 import javafx.stage.FileChooser;
 
 public class Main_Pchecker extends SceneController {
-    
+    //Class variables
     private static int percentage;
 
     private static ArrayList<Essay> masterArr = new ArrayList<Essay>();
@@ -25,16 +25,18 @@ public class Main_Pchecker extends SceneController {
 
     public String fileName;
 
+
     @FXML
     void FileImport(ActionEvent event) {
         FileChooser Fc = new FileChooser();
         File F = Fc.showOpenDialog(App.getMainStage());
         masterArr.add(new Essay(F));      
-        //when clicking file import button file name is saved and added to an arraylist
+        //adds new essay based on file picked in dialogue box
     }
     
     @FXML
     void NextPage1(ActionEvent event) {
+        //Move to next page if valid integer is entered in the text area
         try{
             percentage = Integer.parseInt(Simpercent.getText());
             Open("fxml/Choose_checker.fxml");
@@ -45,15 +47,12 @@ public class Main_Pchecker extends SceneController {
   
     }
     
-    //when clicked it creates/moves to the next page while also prints the array list, while printing what was imputted from the textfile
     public static ArrayList<Essay> getEssayList(){
         return masterArr;
     }
-    //arraylist method    
-
+    
     public static int getPercent(){
         return percentage;
     }
-
-    }
+}
 

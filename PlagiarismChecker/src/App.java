@@ -7,10 +7,12 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 public class App extends Application {
+    //Class variables
     private static Stage primaryStage;
 
     @Override
     public void start(Stage primaryStage) {
+        //Create main scene
         Parent root;
         try{
             root = FXMLLoader.load(getClass().getResource("fxml/Main_checker.fxml"));
@@ -19,7 +21,9 @@ public class App extends Application {
             primaryStage.setScene(scene);
             primaryStage.show();
         }
-        catch (IOException e){}
+        catch (IOException e){
+            e.printStackTrace();
+        }
 
     }
 

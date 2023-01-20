@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch stringPercent",
+            "request": "launch",
+            "mainClass": "stringPercent",
+            "projectName": "12-14-2022-PlagiarismChecker_e54debb3"
+        },
+        {
+            "type": "java",
             "name": "Launch Current File",
             "request": "launch",
             "mainClass": "${file}"
@@ -23,7 +30,7 @@
             "name": "Launch Randomizer",
             "request": "launch",
             "mainClass": "Randomizer",
-            "projectName": "12-14-2022-PlagiarismChecker_e54debb3",
+            "projectName": "12-14-2022-PlagiarismChecker_e54debb3"
         }
     ]
 }

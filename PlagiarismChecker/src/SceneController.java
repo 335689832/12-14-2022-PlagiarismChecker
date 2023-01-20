@@ -6,19 +6,18 @@ import javafx.stage.Stage;
 
 
 public class SceneController {
- public void Open(String name)  {
-   Parent root;
-   try{
-       root = FXMLLoader.load(getClass().getResource(name));
-       Scene scene = new Scene(root);      
-       Stage Stage = new Stage();
-       Stage.setScene(scene);
-       Stage.show();
-       
-      //used as an extention and is used to create new scene
-   }
-   catch (IOException e){}
-
-}
-   
+   public void Open(String name)  {
+      //Open a new fxml window
+      Parent root;
+      try{
+         root = FXMLLoader.load(getClass().getResource(name));
+         Scene scene = new Scene(root);      
+         Stage Stage = new Stage();
+         Stage.setScene(scene);
+         Stage.show(); 
+      }
+      catch (IOException e){
+         e.printStackTrace();
+      }
+   }  
 }
