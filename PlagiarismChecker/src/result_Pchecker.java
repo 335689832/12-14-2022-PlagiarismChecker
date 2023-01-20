@@ -28,6 +28,7 @@ public class result_Pchecker {
     @FXML
     void btnViewResults(ActionEvent event) {
         for(int i = 0; i < Choose_Pchecker.getResultArr().size(); i++){
+            resultTextArea.setText("");
             resultTextArea.appendText(Choose_Pchecker.getResultArr().get(i));
             resultTextArea.appendText("\n");
         }

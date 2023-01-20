@@ -1,39 +1,47 @@
 public class stringPercent {
-    public static int getLevenshteinDistance(String X, String Y)
-    {
-        int m = X.length();
-        int n = Y.length();
- 
-        int[][] T = new int[m + 1][n + 1];
-        for (int i = 1; i <= m; i++) {
-            T[i][0] = i;
+    /**
+     * Calculates the similarity (a number within 0 and 1) between two strings.
+     */
+    public static double Similarity(String s1, String s2) {
+        String longer = s1, shorter = s2;
+        if (s1.length() < s2.length()) { // longer should always have greater length
+            longer = s2; shorter = s1;
         }
-        for (int j = 1; j <= n; j++) {
-            T[0][j] = j;
+        int longerLength = longer.length();
+        if (longerLength == 0){
+          return 100.0; /* both strings are zero length */ 
         }
- 
-        int cost;
-        for (int i = 1; i <= m; i++) {
-            for (int j = 1; j <= n; j++) {
-                cost = X.charAt(i - 1) == Y.charAt(j - 1) ? 0: 1;
-                T[i][j] = Integer.min(Integer.min(T[i - 1][j] + 1, T[i][j - 1] + 1),
-                        T[i - 1][j - 1] + cost);
+        double num = ((longerLength - editDistance(longer, shorter)) / (double) longerLength)*100;
+        return num;
+    }
+  
+    public static int editDistance(String s1, String s2) {
+      s1 = s1.toLowerCase();
+      s2 = s2.toLowerCase();
+  
+      int[] costs = new int[s2.length() + 1];
+      for (int i = 0; i <= s1.length(); i++) {
+        int lastValue = i;
+        for (int j = 0; j <= s2.length(); j++) {
+          if (i == 0)
+            costs[j] = j;
+          else {
+            if (j > 0) {
+              int newValue = costs[j - 1];
+              if (s1.charAt(i - 1) != s2.charAt(j - 1))
+                newValue = Math.min(Math.min(newValue, lastValue),
+                    costs[j]) + 1;
+              costs[j - 1] = lastValue;
+              lastValue = newValue;
             }
+          }
         }
-        return T[m][n];
+        if (i > 0)
+          costs[s2.length()] = lastValue;
+      }
+      return costs[s2.length()];
     }
- 
-    public static double findSimilarity(String x, String y) {
-        if (x == null || y == null) {
-            throw new IllegalArgumentException("Strings must not be null");
-        }
-        
-        double maxLength = Double.max(x.length(), y.length());
-        if (maxLength > 0) {
-            // optionally ignore case if needed
-            return ((maxLength - getLevenshteinDistance(x, y)) / maxLength)*100;
-        }
-        return 1.0;
+    public static void main(String[] args){
+        System.out.println(Similarity("  cheese doubt, I hate you.", "  cheese doubt, I hate you."));
     }
-
 }
