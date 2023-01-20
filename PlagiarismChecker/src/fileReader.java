@@ -11,7 +11,7 @@ public class fileReader {
 	
 /**
   * @param filename the file being read 
-  * @return the contents of the file 
+  * @return count the contents of the file 
   */
   public static String readDocxFile(String fileName) {
 		String count = "";
