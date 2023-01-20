@@ -8,9 +8,13 @@ import org.apache.poi.xwpf.usermodel.XWPFDocument;
 import org.apache.poi.xwpf.usermodel.XWPFParagraph;
 
 public class fileReader {
-  
-  public static void readDocxFile(String fileName) {
-
+	
+/**
+  * @param filename the file being read 
+  * @return the contents of the file 
+  */
+  public static String readDocxFile(String fileName) {
+		String count = "";
 		try {
 			File file = new File(fileName);
 			FileInputStream fis = new FileInputStream(file.getAbsolutePath());
@@ -18,34 +22,15 @@ public class fileReader {
 			XWPFDocument document = new XWPFDocument(fis);
 
 			List<XWPFParagraph> paragraphs = document.getParagraphs();
-			
-			System.out.println("Total no of paragraph "+ paragraphs.size());
+
 			for (XWPFParagraph para : paragraphs) {
-				System.out.println(para.getText());
+				count += para.getText();
 			}
 			fis.close();
-		} catch (Exception e) {
+		} 
+		catch (Exception e) {
 			e.printStackTrace();
 		}
-}
-    public static void main(String[] args) {
-
-		readDocxFile("C:\\Test.docx");
-
+		return count;
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
