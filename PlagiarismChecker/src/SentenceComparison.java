@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 
 public class SentenceComparison {
+  //Written by Gavin
 
   public static double compare(ArrayList<String> arr1, ArrayList<String> arr2, int[] num){
     double percentage = 0;

@@ -2,6 +2,8 @@ import java.io.File;
 import java.util.ArrayList;
 
 public class Essay {
+    //Written by Gavin
+
     private File file;
     private String filePath;
     private String content;
@@ -31,6 +33,7 @@ public class Essay {
     }
 
     public static ArrayList<String> divide(String input) {
+        //Written by Himesh
         String[] splitString = input.split("[.?!]"); // split the input string by periods, question marks or exclamation marks
         ArrayList<String> OneDList = new ArrayList<String>(); // Creates a 1D list
         for (String x : splitString) {

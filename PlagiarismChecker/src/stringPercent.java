@@ -1,4 +1,5 @@
 public class stringPercent {
+    //Appropriated by Gavin
     /**
      * Calculates the similarity (a number within 0 and 1) between two strings.
      */

@@ -8,6 +8,7 @@ import javafx.scene.control.TextField;
 import javafx.stage.FileChooser;
 
 public class Main_Pchecker extends SceneController {
+    //Written by Evan
     //Class variables
     private static int percentage;
 

@@ -9,6 +9,7 @@ import org.apache.poi.xwpf.usermodel.XWPFParagraph;
 
 public class fileReader {
   public static String readDocxFile(String fileName) {
+	//Written by Zara
 		String count = "";
 		try {
 			File file = new File(fileName);

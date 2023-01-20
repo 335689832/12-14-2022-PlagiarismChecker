@@ -6,6 +6,7 @@ import javafx.stage.Stage;
 
 
 public class SceneController {
+   //Written by Evan
    public void Open(String name)  {
       //Open a new fxml window
       Parent root;

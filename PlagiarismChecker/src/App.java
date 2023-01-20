@@ -7,6 +7,7 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 public class App extends Application {
+    //Project assembled by Gavin
     //Class variables
     private static Stage primaryStage;
 
