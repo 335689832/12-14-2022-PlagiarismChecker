@@ -1,33 +1,30 @@
+import java.util.ArrayList;
 import java.util.Random;
 
 public class Randomizer {
-    public static int[] randomize(int l1, int l2){
+    public static ArrayList<Integer> randomize(int length){
         int num = 15;
         int temp;
         Random rand = new Random();
-        int[] randomArr = new int[num];
-        if(l1 > l2){
-            for(int i = 0; i < num; i++){
-                temp = rand.nextInt(l2);
-                for(int j = 0; j< num; j++){
-                    if(!(randomArr[j] == temp)){
-                        randomArr[i] = temp;
-                        break;
-                    }
-                }       
-            }
+        ArrayList<Integer> randomArr = new ArrayList<Integer>();
+        for(int i = 0; i < num; i++){
+            temp = rand.nextInt(length);
+            for(int j = 0; j< num; j++){
+                if(!(randomArr.get(j) == temp)){
+                    randomArr.set(i, temp);
+                    break;
+                }
+                temp = rand.nextInt(length);
+                
+            }       
         }
-        else{
-            for(int i = 0; i < num; i++){
-                temp = rand.nextInt(l1);
-                for(int j = 0; j< num; j++){
-                    if(!(randomArr[j] == temp)){
-                        randomArr[i] = temp;
-                        break;
-                    }
-                }       
-            }
+        for(int i = 0; i < randomArr.size(); i++){
+            System.out.println(randomArr.get(i));
         }
         return randomArr;
+    }
+
+    public static void main(String[] args){
+        ArrayList<Integer> n = randomize(30);
     }
 }

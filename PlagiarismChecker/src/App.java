@@ -1,18 +1,22 @@
+import java.io.File;
 import java.util.ArrayList;
 
 public class App {
     public static void main(String[] args) throws Exception {
-        ArrayList<String> test1 = new ArrayList<String>();
-        test1.add("CHEEKI BREEKI IV DAMKE");
-        test1.add("Electric Wind God Fist");
-        test1.add("What the hell is wrong with you");
+        ArrayList<ArrayList<String>> test1 = new ArrayList<ArrayList<String>>();
         
-        ArrayList<String> test2 = new ArrayList<String>();
-        test2.add("CHEEKI BREEKI IV DAMKE");
-        test2.add("Electric Wind God Fist");
-        test2.add("What the hell is wrong with you");
-
-        System.out.println("has a "+ SentenceComparison.compare(test1, test2, Randomizer.randomize(test1.size(), test2.size()))+"% similarity");
+        try{
+            File file = new File("C:/Users/gtswo/OneDrive/Documents/GitHub/12-14-2022-PlagiarismChecker/PlagiarismChecker/testFiles/Gavin Wong - Inquiry Essay.docx");
+            System.out.println(file.getName());
+            Essay t = new Essay(file, test1);
+            Essay t2 = new Essay(file, test1);
+            int[] r = new int[2];
+            // ArrayList<String> tarr = t.getSentences();
+            System.out.println("has a " + SentenceComparison.compare(t.getSentences(), t.getSentences(), r) + "% similarity");
+        }
+        catch(Exception e){
+            System.out.println("big oof");
+        }
     }
     
 }
