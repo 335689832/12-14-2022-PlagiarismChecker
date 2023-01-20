@@ -3,14 +3,15 @@ import java.util.ArrayList;
 
 public class Essay {
     private File file;
+    private String filePath;
     private String content;
     private ArrayList<String> sentenceArr;
 
-    Essay(File file, ArrayList<ArrayList<String>> masterList){
+    Essay(File file){
         this.file = file;
+        this.filePath = file.toPath().toString();
         this.content = fileReader.readDocxFile((file.toPath()).toString());
         this.sentenceArr = divide(content);
-        masterList.add(sentenceArr);
     }
 
     public File getFile(){
@@ -23,6 +24,10 @@ public class Essay {
 
     public ArrayList<String> getSentences(){
         return sentenceArr;
+    }
+
+    public String getFilePath(){
+        return filePath;
     }
 
     public static ArrayList<String> divide(String input) {
