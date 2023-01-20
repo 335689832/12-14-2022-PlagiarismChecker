@@ -1,12 +1,18 @@
 import java.util.ArrayList;
 
 public class IntoArrayList {
-    public static void addTo2DList(String input, ArrayList<ArrayList<String>> list2D) {
-        String[] splitString = input.split("[.?!]"); // split the input string by periods, question marks or exclamation marks
-        ArrayList<String> OneDList = new ArrayList<String>(); // Creates a 1D list
+    /*
+     * Splits the string by punctuation and is added to a 2D arrayList
+     * @param essay; the string
+     * @param twoDList
+     */
+    public static void addTo2DList(String essay, ArrayList<ArrayList<String>> twoDList) {
+        String regexForSentence = "[.?!]";
+        String[] splitString = essay.split(regexForSentence); // Split the input string by periods, question marks or exclamation marks
+        ArrayList<String> oneDList = new ArrayList<String>(); // Creates a 1D list
         for (String x : splitString) {
-            OneDList.add(x);
+            oneDList.add(x); // adds "x" into the 1D arrayList
         }
-        list2D.add(OneDList);
+        twoDList.add(oneDList); // adds the 1D arrayList into the 2D arrayList
     }
 }
