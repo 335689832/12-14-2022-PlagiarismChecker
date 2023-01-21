@@ -32,9 +32,13 @@ public class Essay {
         return filePath;
     }
 
-    public static ArrayList<String> divide(String input) {
+    /*
+     * Splits the string by punctuation and is added to a 2D arrayList
+     * @param essay; the string
+     */
+    public static ArrayList<String> divide(String essay) {
         //Written by Himesh
-        String[] splitString = input.split("[.?!]"); // split the input string by periods, question marks or exclamation marks
+        String[] splitString = essay.split("[.?!]"); // split the input string by periods, question marks or exclamation marks
         ArrayList<String> OneDList = new ArrayList<String>(); // Creates a 1D list
         for (String x : splitString) {
             OneDList.add(x);

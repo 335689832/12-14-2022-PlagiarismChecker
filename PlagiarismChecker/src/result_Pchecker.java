@@ -27,8 +27,8 @@ public class result_Pchecker {
     //shows the names of all essay files when clicked 
     @FXML
     void btnViewResults(ActionEvent event) {
+        resultTextArea.setText("");
         for(int i = 0; i < Choose_Pchecker.getResultArr().size(); i++){
-            resultTextArea.setText("");
             resultTextArea.appendText(Choose_Pchecker.getResultArr().get(i));
             resultTextArea.appendText("\n");
         }

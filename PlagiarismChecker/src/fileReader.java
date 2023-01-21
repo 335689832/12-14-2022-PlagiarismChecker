@@ -2,11 +2,14 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.util.List;
 
-import org.apache.poi.hwpf.HWPFDocument;
-import org.apache.poi.hwpf.extractor.WordExtractor;
 import org.apache.poi.xwpf.usermodel.XWPFDocument;
 import org.apache.poi.xwpf.usermodel.XWPFParagraph;
 
+
+/**
+  * @param filename the file being read 
+  * @return count the contents of the file 
+  */
 public class fileReader {
   public static String readDocxFile(String fileName) {
 	//Written by Zara

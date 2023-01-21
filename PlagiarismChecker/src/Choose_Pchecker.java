@@ -39,6 +39,7 @@ public class Choose_Pchecker extends SceneController {
         Open("fxml/result_checker.fxml");
         
         //for each entry in the essayList, compare to the other essays
+        //Written by Gavin
         for(int i = 0; i < tempArr.size(); i++){
             for(int j = i+1; j < tempArr.size(); j++){            
                 //essay should not compare to itself
