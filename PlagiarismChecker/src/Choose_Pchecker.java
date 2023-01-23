@@ -29,6 +29,7 @@ public class Choose_Pchecker extends SceneController {
     @FXML
     void BackPage1(ActionEvent event) {
         Open("fxml/Main_checker.fxml");
+        tempArr.clear();
         //when clicked it creates/moves to the previous page
 
     }

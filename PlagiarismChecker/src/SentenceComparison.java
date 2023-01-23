@@ -22,24 +22,25 @@ public class SentenceComparison {
 
     if(inverseOrder){
       for(int i = 0; i < l1; i++){
-        for(int j = 0; j < l2; j++){
+        for(int j = i; j < l2; j++){
+          counter++;
           double comparePercent = stringPercent.Similarity(arr1.get(j), arr2.get(i));
           if(comparePercent > 15){
             percentage++;
+            break;
           }
-          counter++;
         }
-        
       }
     }
     else{
       for(int i = 0; i < l1; i++){
-        for(int j = 0; j < l2; j++){
+        for(int j = i; j < l2; j++){
+          counter++;
           double comparePercent = stringPercent.Similarity(arr1.get(i), arr2.get(j));
           if(comparePercent > 15){
             percentage++;
+            break;
           }
-          counter++;
         }
       }
     }
